@@ -7,6 +7,7 @@ import WishlistNetwork from '../../wishlist/network/WishlistNetwork';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSecretSantaLoading, setWishlist } from '../../secret-santa/state/secretSantaSlice';
 import { setSelfWishlist, setWishlistLoading } from '../../wishlist/state/wishlistSlice';
+import { setToken } from "../../login/state/loginSlice";
 const { TabPane } = Tabs;
 
 const HomeScreen = () => {
@@ -19,23 +20,37 @@ const HomeScreen = () => {
   useEffect(async () => {
     if (selectedTab == 0) {
       if (!user.id) return
-      if (!secretSantaLoading) {
-        dispatch(setSecretSantaLoading(true))
-        try {
-          const wishlist = await WishlistNetwork.fetchWishlist(giftee.id)
-          dispatch(setWishlist(wishlist))
-        } catch (e) {
-          notification.warn(e)
+      // if (!secretSantaLoading) {
+      dispatch(setSecretSantaLoading(true))
+      try {
+        const wishlist = await WishlistNetwork.fetchWishlist(giftee.id)
+        dispatch(setWishlist(wishlist))
+      } catch (e) {
+        if (e.status === 403) {
+          dispatch(setToken(null))
         }
-        dispatch(setSecretSantaLoading(false))
+        else {
+          notification.warn(e.msg)
+        }
       }
+      dispatch(setSecretSantaLoading(false))
+      // }
     } else {
-      if (!wishlistLoading) {
-        dispatch(setWishlistLoading(true))
+      // if (!wishlistLoading) {
+      dispatch(setWishlistLoading(true))
+      try {
         const wishlist = await WishlistNetwork.fetchWishlist(user.id)
-        dispatch(setSelfWishlist(wishlist))
-        dispatch(setWishlistLoading(false))
+        dispatch(setWishlist(wishlist))
+      } catch (e) {
+        if (e.status === 403) {
+          dispatch(setToken(null))
+        }
+        else {
+          notification.warn(e.msg)
+        }
       }
+      dispatch(setWishlistLoading(false))
+      // }
     }
   }, [selectedTab, user])
 
