@@ -1,0 +1,10 @@
+.shopping-link {
+  color: blue;
+  text-decoration: underline;
+  padding-left: 1em;
+  padding-right: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
