@@ -9,7 +9,8 @@ const App = () => {
   const login = useSelector(state => state.login)
 
   // axios.defaults.baseURL = 'https://floating-retreat-13780.herokuapp.com'
-  axios.defaults.baseURL = 'http://localhost:8000'
+  // axios.defaults.baseURL = 'http://localhost:8000'
+  axios.defaults.baseURL = 'http://128.199.29.104'
 
   return (
     <>
