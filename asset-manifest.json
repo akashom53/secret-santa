@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/secret-santa-new/static/css/main.654f9c95.css",
-    "main.js": "/secret-santa-new/static/js/main.43c9b7e3.js",
+    "main.js": "/secret-santa-new/static/js/main.f9f6ac02.js",
     "static/js/787.e75010bc.chunk.js": "/secret-santa-new/static/js/787.e75010bc.chunk.js",
     "static/media/secret-santa.png": "/secret-santa-new/static/media/secret-santa.a125fc9974e66e032f53.png",
     "static/media/gift-icon.jpg": "/secret-santa-new/static/media/gift-icon.f55aea815369b59d33f4.jpg",
     "index.html": "/secret-santa-new/index.html",
     "main.654f9c95.css.map": "/secret-santa-new/static/css/main.654f9c95.css.map",
-    "main.43c9b7e3.js.map": "/secret-santa-new/static/js/main.43c9b7e3.js.map",
+    "main.f9f6ac02.js.map": "/secret-santa-new/static/js/main.f9f6ac02.js.map",
     "787.e75010bc.chunk.js.map": "/secret-santa-new/static/js/787.e75010bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.654f9c95.css",
-    "static/js/main.43c9b7e3.js"
+    "static/js/main.f9f6ac02.js"
   ]
 }
