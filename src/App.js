@@ -12,8 +12,8 @@ const App = () => {
   const login = useSelector(state => state.login)
 
   // axios.defaults.baseURL = 'https://floating-retreat-13780.herokuapp.com'
-  axios.defaults.baseURL = 'http://192.168.1.5:8000'
-  // axios.defaults.baseURL = 'https://api.akashsrivastava.dev'
+  // axios.defaults.baseURL = 'http://192.168.1.5:8000'
+  axios.defaults.baseURL = 'https://api.akashsrivastava.dev'
   const isProduction = process.env.NODE_ENV === 'production';
   return (
     <CacheBuster
@@ -25,7 +25,7 @@ const App = () => {
       }}
     >
       <>
-      {/* <LogComponent></LogComponent> */}
+      <LogComponent></LogComponent>
         {login.token ? <HomeScreen /> : <LoginScreen />}
         <CustomLoader />
       </>
