@@ -40,7 +40,7 @@ const HomeScreen = () => {
       dispatch(setWishlistLoading(true))
       try {
         const wishlist = await WishlistNetwork.fetchWishlist(user.id)
-        dispatch(setWishlist(wishlist))
+        dispatch(setSelfWishlist(wishlist))
       } catch (e) {
         if (e.status === 403) {
           dispatch(setToken(null))

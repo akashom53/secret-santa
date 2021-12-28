@@ -1,6 +1,6 @@
 import React from 'react'
 import './WishlistDetails.css'
-import Link from './Link'
+import './Link.css'
 
 const WishlistDetails = ({ item }) => {
   return (
@@ -9,7 +9,7 @@ const WishlistDetails = ({ item }) => {
         <div className='wishlist-item-desc'>
           {item.desc}
         </div>
-        <Link url={item.url}/>
+        <a className='shopping-link' href={item.url ?? ''} target="_blank">Open Link </a>
       </div>
     </>
   );

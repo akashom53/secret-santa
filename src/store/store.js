@@ -1,19 +1,27 @@
 import { configureStore } from "@reduxjs/toolkit";
+import logReducer from "../core/debugLog/state/logSlice";
 import loaderReducer from "../core/loader/state/loaderSlice";
 import loginReducer from "../login/state/loginSlice";
 import secretSantaReducer from "../secret-santa/state/secretSantaSlice";
 import wishlistReducer from "../wishlist/state/wishlistSlice";
 
-const persistedState = localStorage.getItem('reduxState')
-  ? JSON.parse(localStorage.getItem('reduxState'))
-  : {}
+const getPersistedState = () => {
+  let temp = localStorage.getItem('reduxState')
+    ? JSON.parse(localStorage.getItem('reduxState'))
+    : {}
+  temp.loader.visible = false
+  return temp
+}
+
+const persistedState = getPersistedState()
 
 const store = configureStore({
   reducer: {
     login: loginReducer,
     loader: loaderReducer,
     secretSanta: secretSantaReducer,
-    wishlist: wishlistReducer
+    wishlist: wishlistReducer,
+    logs: logReducer
   },
   preloadedState: persistedState
 })

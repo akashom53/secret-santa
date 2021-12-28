@@ -1,4 +1,6 @@
 import axios from "axios"
+import { clear, log } from "../../core/debugLog/state/logSlice"
+import store from "../../store/store"
 
 export default class LoginNetwork {
   static login = async (phone) => {
