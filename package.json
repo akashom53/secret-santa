@@ -1,7 +1,7 @@
 {
   "name": "secret-santa",
   "homepage": "https://akashom53.github.io/secret-santa-new/",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",

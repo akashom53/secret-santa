@@ -9,7 +9,7 @@ const getPersistedState = () => {
   let temp = localStorage.getItem('reduxState')
     ? JSON.parse(localStorage.getItem('reduxState'))
     : {}
-  temp.loader.visible = false
+  if (temp.loader) temp.loader.visible = false
   return temp
 }
 
